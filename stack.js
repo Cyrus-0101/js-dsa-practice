@@ -12,13 +12,18 @@
  * Example: Use an array stack to identify palindromes.
  */
 
-var letters = []; // A Stack.
+exports.checkIfLetterIsPalindrome = (word) => {
+  var letters = []; // A Stack.
 
-const checkIfLetterIsPalindrome = (word) => {
   var reverseword = "";
 
   // Put letters of word into stack.
   for (var i = 0; i < word.length; i++) {
+    if (word[i] !== " ") {
+      delete word[i];
+      continue;
+    }
+
     letters.push(word[i]);
   }
 
@@ -34,4 +39,46 @@ const checkIfLetterIsPalindrome = (word) => {
   }
 };
 
-checkIfLetterIsPalindrome("node");
+/**
+ * Stack Data Structure
+ * Operations on a stack are:
+ * - push
+ * - pop
+ * - size
+ * - peek
+ */
+exports.Stack = function () {
+  this.count = 0;
+  this.storage = {};
+
+  // Adds a value onto the end of the stack.
+  this.push = (value) => {
+    this.storage[this.count] = value;
+    this.count++;
+  };
+
+  // Removes and returns the value at the end of the stack.
+  this.pop = () => {
+    if (this.count === 0) {
+      return undefined;
+    }
+
+    this.count--;
+
+    var result = this.storage[this.count];
+
+    delete this.storage[this.count];
+
+    return result;
+  };
+
+  // Returns the size of the stack.
+  this.size = () => {
+    return this.count;
+  };
+
+  //   Peek returns the value at the end of the stack.
+  this.peek = () => {
+    return this.storage[this.count - 1];
+  };
+};
