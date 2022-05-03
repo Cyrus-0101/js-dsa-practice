@@ -11,6 +11,8 @@
 1. Evaluate "time complexity" and "space complexity" of different algorithms using Big "O" Notation.
 1. Describe what a logarithm is.
 
+## Time Complexity.
+
 ### Why write "good performing code" or care about Big "O"?
 - Its important to have a precise vocabulary to talk about code performance.
 - Useful for discussing trade-offs between different approaches.
