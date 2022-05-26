@@ -92,9 +92,9 @@
   - Rather than counting seconds, lets count the number of operations the simple computer has to perform.
 
   * Regardless of the exact number, the number of operations grows roughly proportionally with n, in the first solution's case, but in the second we are able to see that they are only three (3) operations no matter the size of n.
-
-  ## Simplifying Expressions.
-  When determining the time complexity of an algorithm, there are some helpful rules of thumb for big "O" expressions. These rules, are consequences of the definition of big "O" notation.
+  
+  ### Simplifying Expressions.
+  - When determining the time complexity of an algorithm, there are some helpful rules of thumb for big "O" expressions. These rules, are consequences of the definition of big "O" notation.
 
   * Constants do not matter. * Ranked in order of fastest to slowest.
 
@@ -113,36 +113,40 @@
   | O(n² + 5n + 8) | O(n²) |
 
   ### What to consider when analyzing complexity with Big "O".
-  Things do get complicated, but there are some rules of thumb that can help but won't always work, but helpful to start with:
-  #### Big "O" Shorthands:
-  1. `Arithmetic Operations are constant` - This means "BODMAS" operations are going to happen at constant time.
-  1. `Variable assignment is constant`.
-  1. `Accessing elements in array by index or an object by key is constant`.
-  1. `In a loop, the complexity is the length of the loop times the complexity of whatever happens inside the loop
+  - Things do get complicated, but there are some rules of thumb that can help but won't always work, but helpful to start with:
+  
+    #### Big "O" Shorthands:
+    1. `Arithmetic Operations are constant` - This means "BODMAS" operations are going to happen at constant time.
+    1. `Variable assignment is constant`.
+    1. `Accessing elements in array by index or an object by key is constant`.
+    1. `In a loop, the complexity is the length of the loop times the complexity of whatever happens inside the loop.
 
 
-  ##### Examples:
-  ```javascript
-  // Solution I: O(n)
-    function logAtLeast5(n) {
-      for (var i = 1; i <= Math.max(5, n); i++) { // The loop goes to 5 or n if n is larger than 5
-        console.log(i)
-      }
-    }
-  ```
-  * In the above `Solution I`, we see that the Big "O" is `O(n)`, because as n grows so do the number of operations. Meaning if we pass 10, there will be 10 operations, and if I pass 1,000,000,000 there will be 1,000,000,000 operations.
+      ##### Examples:
+      ```javascript
+      // Solution I: O(n)
+        function logAtLeast5(n) {
+          for (var i = 1; i <= Math.max(5, n); i++) { // The loop goes to 5 or n if n is larger than 5
+            console.log(i)
+          }
+        }
+      ```
+      * In the above `Solution I`, we see that the Big "O" is `O(n)`, because as n grows so do the number of operations. Meaning if we pass 10, there will be 10 operations, and if I pass 1,000,000,000 there will be 1,000,000,000 operations.
 
-  ```javascript
-    // Solution II: O(1)
-    function logAtMost5(n) {
-      for (var i = 1; i <= Math.min(5, n); i++) { // The loop goes to 5 or n if n is smaller than 5
-        console.log(i)
-      }
-    }
-  ```
-  * If n grows the big "O" remains constant meaning if we add 2, 3, then 5, the graph would grow and till 5 and will not pass there, meaning the Big "O" of `Solution II` is `O(1)`
+      ```javascript
+        // Solution II: O(1)
+        function logAtMost5(n) {
+          for (var i = 1; i <= Math.min(5, n); i++) { // The loop goes to 5 or n if n is smaller than 5
+            console.log(i)
+          }
+        }
+      ```
+      * If n grows the big "O" remains constant meaning if we add 2, 3, then 5, the graph would grow and till 5 and will not pass there, meaning the Big "O" of `Solution II` is `O(1)`
 
 
 
 
   
+
+## Space Complexity.
+- `Auxiliary space complexity`, is term used to describe the space required by the algorithm to run, not including the space taken up by inputs.
