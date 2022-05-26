@@ -150,3 +150,56 @@
 
 ## Space Complexity.
 - `Auxiliary space complexity`, is term used to describe the space required by the algorithm to run, not including the space taken up by inputs.
+
+  ### Rules Of Thumb:
+  1. Most primitives (booleansm numbers, undefined, null), have constant space.
+  1. Strings require O(n) space.
+  1. Reference types are generally O(n) space ∴ (the length - for arrays) or (the number of keys - for objects).
+
+  ### Example:
+  ```javascript
+    // Sol 1 - 0(1) space complexity.
+    function sum(arr) {
+      let total = 0; // Since variable is only declared once from what we know hence 0(1) space since no new variable is created, no matter the size of the input.
+
+      for(let i = 0; i < arr.length; i++) {
+        total += arr[i];
+      }
+
+      return total;
+    }
+
+    // Sol 2 - O(n)
+    // The function below doubles the [i]numbers in the passed in arr value.
+    function double(arr) {
+      let newArr = [];
+
+      for(let i = 0; i < arr.length; i++) {
+        newArr.push(2 * arr[i]);
+      }
+
+      return newArr;
+    }
+  ```
+
+## Logarithms.
+
+* It is an inverse of an exponentiation ∴
+
+	### Example:
+	```sh
+		log₂(8) = 3 ## Its inverse is 
+		log₂(x) = n  ==> 2ⁿ = x # where n is the exponent and x is the value
+	```
+
+	- In Programming we use: `log === log₂`.
+
+* Its worth noting an algorithm with O(log n) time complexity is great second to O(1). Certain searching algorithms have logaritmic time complexity.
+
+- Efficient sorting algorithms involve logaritms. Recursion sometimes involves logarithmic space complexity.
+
+## Recap:
+  ### What is big "O"? 
+  * Its is used to analyze the performance of an algorithm. 
+  * It gives us a high understanding of the `time` and `space` complexity of an algorithm. It doesn't care about precision, only about general trends: [Linear? Quadratic? Constant?].
+  * The time or space complexity (as measured by Big "O"), depends only on the algorithm, not the h/w used to run the algorithm.
